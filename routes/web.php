@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\{
     UserController
+
 };
 use Illuminate\Support\Facades\Route;
 
-Route::get('/users/thrashed', [UserController::class, 'thrashed'])->name('users.thrashed');
 Route::delete('/users/{id}',[UserController::class, 'delete'])->name('users.delete');
 Route::put('/users{id}', [UserController::class, 'update'])->name('users.update');
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');

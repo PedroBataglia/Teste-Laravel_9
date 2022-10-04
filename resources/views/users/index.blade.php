@@ -56,9 +56,7 @@
                 <p class="text-gray-900 whitespace-no-wrap">
                 {{ $user->created_at }}
             </td>
-            @if ($user->deleted_at)
-                Removido
-            @else
+
             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <a class="px-10 py-15 shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-nome text-white rounded-lg"
                     href="{{ route('users.edit', $user->id) }}">Editar</a>
@@ -69,12 +67,9 @@
                     class="px-10 py-15 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-nome text-white rounded-lg"
                     href="{{ route('users.show', $user->id) }}">Detalhes</a>
             </td>
-            @endif
+
         </tr>
      @endforeach
     </tbody>
-    <form action="{{ route('users.thrashed') }}" method="get">
-        <button>Deletados</button>
-    </form>
 </table>
 @endsection
